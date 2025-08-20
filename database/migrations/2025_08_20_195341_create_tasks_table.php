@@ -9,22 +9,24 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-public function up()
+public function up(): void
 {
-    Schema::create('journals', function (Blueprint $table) {
+    Schema::create('tasks', function (Blueprint $table) {
         $table->id();
-        $table->foreignId('user_id')->constrained()->onDelete('cascade');
         $table->string('title');
-        $table->text('body');
+        $table->text('description')->nullable();
+        $table->boolean('is_completed')->default(false);
+        $table->foreignId('user_id')->constrained()->onDelete('cascade');
         $table->timestamps();
     });
 }
+
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('journals');
+        Schema::dropIfExists('tasks');
     }
 };
