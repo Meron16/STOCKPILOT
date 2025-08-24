@@ -2,7 +2,7 @@
 
 A simple task management app built with Laravel, Breeze, and MySQL.
 
-## Features
+## Featuresa
 - User  authentication
 - Create, Read, Update, Delete (CRUD) tasks
 - Each user manages their own tasks
